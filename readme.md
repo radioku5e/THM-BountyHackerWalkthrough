@@ -31,7 +31,7 @@ None needed
 ## Scanning
 I used nmap to find available ports on the target machine. This revealed ports 21, 22, and 80.
 
-![Enumeration](enumeration.png)
+![Enumeration](images/enumeration.png)
 
 ## Gaining Access
 #### Exploitation
@@ -39,34 +39,34 @@ I curl/ed to see what was on port 80. It was a plain page with no remarkable ite
 
 I anonimously ftp/ed in and found two files locks.txt and task.txt. I used get in ftp to download these files. Once downloaded, I cat/ed both files. I used the task.txt file to find the user (Question 3), and the locks.txt was a password list.
 
-![Exfiltration](exfiltration.png)
+![Exfiltration](images/exfiltration.png)
 
-![Examination 1](examination1.png)
+![Examination 1](images/examination1.png)
 
-![Examination 2](examination2.png)
+![Examination 2](images/examination2.png)
 
 Having a password list, I used hydra to brute force the password for the user discovered above. (Question 4)
 
-![exploitation 1](exploitation1.png)
+![exploitation 1](images/exploitation1.png)
 
 I used the password hydra found to ssh in (Question 5). Once in, I used ls to look in all the directories in the user's home directory. I found the user.txt file in the Desktop directory. I cat/ed it to reveal the first flag (Question 6).
 
-![Infiltration 1](infiltration.png)
+![Infiltration 1](images/infiltration.png)
 
-![First Flag](firstflag.png)
+![First Flag](images/firstflag.png)
 
 #### Privilege Escalation 
 I used find to try to find root.txt to no avail. I assumed the file would be inaccessible to the current user. In order to find out what I can run, I used sudo -l. I found that the tar command was available to the user and would run as root. After a few tries to use tar to privescalate, I went to GTFOBins.github.io too find a known exploit for tar. 
 
-![Exploration 1](exploration1.png)
+![Exploration 1](images/exploration1.png)
 
-![Exploration 2](exploration2.png)
+![Exploration 2](images/exploration2.png)
 
 I found the correct target and ran it. It gave me a bash as root. I ls/ed all the directories again and found root.txt root directory in the root of the drive. (Question 7)
 
-![Exploitation 2](exploitation2.png)
+![Exploitation 2](images/exploitation2.png)
 
-![Second Flag](secondflag.png)
+![Second Flag](images/secondflag.png)
 
 ## Maintaining Access 
 Not needed
