@@ -1,4 +1,5 @@
 # Welcome to Bounty Hacker: A TryHackMe.com Walkthrough
+[Bounty Hacker](https://tryhackme.com/room/cowboyhacker)
 This is my first published walkthrough. I hope it helps you learn and you enjoy it.
 
 This room is considered easy. It can be completed in about 20 minutes.
