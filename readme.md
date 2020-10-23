@@ -58,6 +58,8 @@ I used the password hydra found to ssh in (Question 5). Once in, I used ls to lo
 #### Privilege Escalation 
 I used find to try to find root.txt to no avail. I assumed the file would be inaccessible to the current user. In order to find out what I can run, I used sudo -l. I found that the tar command was available to the user and would run as root. After a few tries to use tar to privescalate, I went to GTFOBins.github.io too find a known exploit for tar. 
 
+![Examination 3](examination3.png)
+
 ![Exploration 1](images/exploration1.png)
 
 ![Exploration 2](images/exploration2.png)
